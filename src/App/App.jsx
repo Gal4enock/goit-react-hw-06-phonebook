@@ -42,14 +42,11 @@ class App extends Component {
       name,
       id: uuidv4(),
       number
-    };
+      };
     this.setState({doubleName: null})
     const doubleName = this.state.contacts.find(el => el.name === contact.name);
     if (doubleName) {
-      
-      // alert(`${contact.name} is already in contacts`);
-      // return <Notification name={contact.name }/>
-      
+
         this.setState({ doubleName: contact.name })
         setTimeout(() => {
           this.setState({ doubleName: null })
