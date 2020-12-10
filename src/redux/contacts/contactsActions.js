@@ -15,3 +15,8 @@ const handleDelete = nameId => ({
   type: "contact/del",
   payload: {id: nameId}
 })
+
+const handleFilter = filter => ({
+  type: "contact/filter",
+  payload: {filter}
+})
