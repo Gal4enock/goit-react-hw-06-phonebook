@@ -4,7 +4,9 @@ import constants from '../constants.js';
 const items = (state = [], { type, payload }) => {
   switch (type) {
     case constants.ADD:
-      return [...state, payload.contact]
+      return [...state, payload.contact];
+    case constants.DELETE:
+      return state.filter (contact => contact.id !== payload.id)
     default:
       return state;
   }
@@ -43,13 +45,7 @@ export default combineReducers ({items, filter})
 //   }
   
   
-//   handleDelete = nameId => {
-//     this.setState(prevState => {
-//       return {
-//         contacts: prevState.contacts.filter(contact => contact.id !== nameId)
-//       }
-//     })
-//   }
+
 //    handleFilter = () => {
 //       const { contacts, filter } = this.state;
 //       return (contacts.length ? contacts.filter((contact => contact.name.toLowerCase().includes(filter.toLowerCase()) )) : [])
