@@ -83,8 +83,9 @@ class App extends Component {
         
         <h1 className={Style.fontColor}>Phonebook</h1>
         <ContactForm />
-        {/* <ContactForm toAddContacts={this.addContacts}/>
         <h2>Find contacts by name</h2>
+        <Contacts />
+        {/* 
         <Filter value={filter} toFilter={this.handleChange} />
         <Contacts contacts={this.handleFilter()} onDelete={this.handleDelete} />
           <CSSTransition in={this.state.doubleName} timeout={250} classNames={Style} unmountOnExit>

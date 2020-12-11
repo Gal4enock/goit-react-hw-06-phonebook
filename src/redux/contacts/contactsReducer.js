@@ -1,7 +1,14 @@
 import { combineReducers } from 'redux';
+import constants from '../constants.js';
 
-
-const items = (state = [], action) => state;
+const items = (state = [], { type, payload }) => {
+  switch (type) {
+    case constants.ADD:
+      return [...state, payload.contact]
+    default:
+      return state;
+  }
+};
 const filter = (state = '', action) => state;
 
 export default combineReducers ({items, filter})
