@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 import {CSSTransition} from 'react-transition-group';
 
 import Contacts from '../Contacts/Contacts';
@@ -84,6 +84,7 @@ class App extends Component {
         <h1 className={Style.fontColor}>Phonebook</h1>
         <ContactForm />
         <h2>Find contacts by name</h2>
+        <Filter />
         <Contacts />
         {/* 
         <Filter value={filter} toFilter={this.handleChange} />
