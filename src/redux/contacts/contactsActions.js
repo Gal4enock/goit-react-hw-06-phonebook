@@ -1,9 +1,10 @@
 import { v4 as uuidv4 } from 'uuid';
+import constants from '../constants.js';
 
 const addContacts = (name, number) => ({
-  type: "contact/add",
+  type: constants.ADD,
   payload: {
-    contact = {
+    contact: {
       name,
       id: uuidv4(),
       number
@@ -12,11 +13,17 @@ const addContacts = (name, number) => ({
 })
 
 const handleDelete = nameId => ({
-  type: "contact/del",
+  type: constants.DELETE,
   payload: {id: nameId}
 })
 
 const handleFilter = filter => ({
-  type: "contact/filter",
+  type: constants.FILTER,
   payload: {filter}
 })
+
+export default {
+  addContacts,
+  handleDelete,
+  handleFilter
+}

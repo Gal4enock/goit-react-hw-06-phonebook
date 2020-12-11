@@ -1,6 +1,9 @@
-import { createStore, combineRedusers } from 'redux';
+import { createStore, combineReducers } from 'redux';
+import contactsReducer from './contacts/contactsReducer';
 
-const rootReducer = combineRedusers({});
+const rootReducer = combineReducers({
+  contacts: contactsReducer,
+});
 
 const reducer = (state = {}, action) => state;
 
