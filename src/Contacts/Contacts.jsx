@@ -27,9 +27,12 @@ Contacts.propTypes = {
   onDelete: PropTypes.func.isRequired,
 }
 
-const mapStateToProps = state => ({
-  contacts: state.contacts.items
-});
+const mapStateToProps = state => {
+  const filteredNames = state.contacts.items.filter(contact => contact.name.toLowerCase().includes(state.contacts.filter.toLowerCase()) )
+  return {
+    contacts: filteredNames
+  }
+};
 const mapDispatchToProps = {
   onDelete: contactsActions.handleDelete,
 }

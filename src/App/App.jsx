@@ -11,11 +11,11 @@ import Style from './App.module.css'
 
 
 class App extends Component {
-  state = {
-    contacts: [],
-    filter: '',
-    doubleName: null
-  }
+  // state = {
+  //   contacts: [],
+  //   filter: '',
+  //   doubleName: null
+  // }
 
   // localContacts = '';
 

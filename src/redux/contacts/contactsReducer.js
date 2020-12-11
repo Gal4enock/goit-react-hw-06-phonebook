@@ -11,7 +11,14 @@ const items = (state = [], { type, payload }) => {
       return state;
   }
 };
-const filter = (state = '', action) => state;
+const filter = (state = '', { type, payload }) => {
+  switch (type) {
+    case constants.FILTER:
+      return payload.filter
+    default:
+      return state;
+  }
+};
 
 export default combineReducers ({items, filter})
 
