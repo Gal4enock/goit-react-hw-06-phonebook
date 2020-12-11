@@ -25,34 +25,3 @@ const filter = createReducer('', {
 export default combineReducers ({items, filter})
 
 
-// addContacts = (name, number) => {
-//     const contact = {
-//       name,
-//       id: uuidv4(),
-//       number
-//       };
-//     this.setState({doubleName: null})
-//     const doubleName = this.state.contacts.find(el => el.name === contact.name);
-//     if (doubleName) {
-
-//         this.setState({ doubleName: contact.name })
-//         setTimeout(() => {
-//           this.setState({ doubleName: null })
-//         }, 2000)
-      
-//       return 
-//     }
-//     this.setState(prevState => {
-//       return {
-//         contacts: [...prevState.contacts, contact]
-//       }
-//     })
-//   }
-  
-  
-
-//    handleFilter = () => {
-//       const { contacts, filter } = this.state;
-//       return (contacts.length ? contacts.filter((contact => contact.name.toLowerCase().includes(filter.toLowerCase()) )) : [])
-      
-//     }
