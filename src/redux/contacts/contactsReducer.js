@@ -10,17 +10,22 @@ const toAddContact = (state, action) => {
     }
   return [...state, action.payload.contact];
 }
-const toFilterContact = (state, action) => state.filter(contact => contact.id !== action.payload.id);
+
+const toFilterContact = (state, action) => state.filter(contact => contact.id !== action.payload);
+
+
 
 const items = createReducer([], {
-  [contactsActions.addContacts.type]: toAddContact,
-  [contactsActions.handleDelete.type]: toFilterContact
+  [contactsActions.postContacts]: (state, action) =>  localStorage.getItem('contacts') ? JSON.parse(localStorage.getItem('contacts')) : state,
+  [contactsActions.addContacts]: toAddContact,
+  [contactsActions.handleDelete]: toFilterContact,
 })
 
 
 const filter = createReducer('', {
-  [contactsActions.handleFilter.type]: (state, action) => action.payload.filter
+  [contactsActions.handleFilter]: (state, action) => action.payload.filter
 })
+
 
 export default combineReducers ({items, filter})
 

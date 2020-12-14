@@ -14,13 +14,15 @@ const addContacts = createAction('contact/add', (name, number) => {
   }
 })
 
-const handleDelete = createAction('contact/del', nameId => ({payload: {id: nameId}}))
+const handleDelete = createAction('contact/del')
 
 const handleFilter = createAction('contact/filter', filter=> ({payload: {filter}}) )
 
+const postContacts = createAction('contacts/post')
 
 export default {
   addContacts,
   handleDelete,
-  handleFilter
+  handleFilter,
+  postContacts
 }
